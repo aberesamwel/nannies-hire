@@ -1,112 +1,112 @@
-// const countries = [
-//   { name: "Kenya", code: "KE" },
-//   { name: "Uganda", code: "UG" },
-//   { name: "Tanzania", code: "TZ" },
-//   { name: "Rwanda", code: "RW" },
-//   { name: "South Sudan", code: "SS" },
-//   { name: "Nigeria", code: "NG" },
-//   { name: "Ghana", code: "GH" },
-//   { name: "South Africa", code: "ZA" }
-// ];
+const countries = [
+  { name: "Kenya", code: "KE" },
+  { name: "Uganda", code: "UG" },
+  { name: "Tanzania", code: "TZ" },
+  { name: "Rwanda", code: "RW" },
+  { name: "South Sudan", code: "SS" },
+  { name: "Nigeria", code: "NG" },
+  { name: "Ghana", code: "GH" },
+  { name: "South Africa", code: "ZA" }
+];
 
-// document.addEventListener("DOMContentLoaded", () => {
-//   const form = document.getElementById("registrationForm");
-//   const countrySelect = document.getElementById("country");
-//   const timeDisplay = document.getElementById("timeDisplay");
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("registrationForm");
+  const countrySelect = document.getElementById("country");
+  const timeDisplay = document.getElementById("timeDisplay");
 
-//   // Populate country dropdown
-//   if (countrySelect) {
-//     countries.forEach(c => {
-//       const opt = document.createElement("option");
-//       opt.value = c.code;
-//       opt.textContent = c.name;
-//       countrySelect.appendChild(opt);
-//     });
-//   }
-//   console.log("countrySelect:", countrySelect); // should NOT be null
+  // Populate country dropdown
+  if (countrySelect) {
+    countries.forEach(c => {
+      const opt = document.createElement("option");
+      opt.value = c.code;
+      opt.textContent = c.name;
+      countrySelect.appendChild(opt);
+    });
+  }
+  console.log("countrySelect:", countrySelect); // should NOT be null
 
 
-//   // Registration Form Submission
-//   if (form) {
-//     form.addEventListener("submit", async (e) => {
-//       e.preventDefault();
-//       const name = form.name.value.trim();
-//       const idNumber = form.idNumber.value.trim();
-//       const country = form.country.value;
-//       const role = form.role.value;
-//       const timestamp = new Date().toLocaleString();
+  // Registration Form Submission
+  if (form) {
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const name = form.name.value.trim();
+      const idNumber = form.idNumber.value.trim();
+      const country = form.country.value;
+      const role = form.role.value;
+      const timestamp = new Date().toLocaleString();
 
-//       if (!name || !idNumber || !country || !role) {
-//         alert("Please fill in all required fields.");
-//         return;
-//       }
+      if (!name || !idNumber || !country || !role) {
+        alert("Please fill in all required fields.");
+        return;
+      }
 
-//       const payload = { name, idNumber, country, role, timestamp };
+      const payload = { name, idNumber, country, role, timestamp };
 
-//       try {
-//         const res = await fetch("http://localhost:5000/registrations", {
-//           method: "POST",
-//           headers: { "Content-Type": "application/json" },
-//           body: JSON.stringify(payload)
-//         });
+      try {
+        const res = await fetch("http://localhost:5000/registrations", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
 
-//         const result = await res.json();
-//         if (res.ok) {
-//           if (timeDisplay) {
-//             timeDisplay.textContent = `✅ Registered at ${timestamp}`;
-//           }
-//           form.reset();
-//           showDashboard();
-//           fetchAndDisplayUsers();
-//         } else {
-//           alert("❌ Error: " + (result.error || "Registration failed."));
-//         }
-//       } catch (err) {
-//         alert("Network error.");
-//         console.error(err);
-//       }
-//     });
-//   }
+        const result = await res.json();
+        if (res.ok) {
+          if (timeDisplay) {
+            timeDisplay.textContent = `✅ Registered at ${timestamp}`;
+          }
+          form.reset();
+          showDashboard();
+          fetchAndDisplayUsers();
+        } else {
+          alert("❌ Error: " + (result.error || "Registration failed."));
+        }
+      } catch (err) {
+        alert("Network error.");
+        console.error(err);
+      }
+    });
+  }
 
-//   fetchAndDisplayUsers();
-//   initSlideshow();
-//   initBookingForm();
-// });
+  fetchAndDisplayUsers();
+  initSlideshow();
+  initBookingForm();
+});
 
-// function showDashboard() {
-//   const reg = document.getElementById("registrationForm").closest("section");
-//   const dash = document.getElementById("dashboardSection");
-//   if (reg) reg.classList.add("hidden");
-//   if (dash) dash.classList.remove("hidden");
-// }
+function showDashboard() {
+  const reg = document.getElementById("registrationForm").closest("section");
+  const dash = document.getElementById("dashboardSection");
+  if (reg) reg.classList.add("hidden");
+  if (dash) dash.classList.remove("hidden");
+}
 
-// async function fetchAndDisplayUsers() {
-//   const tbody = document.getElementById("usersTableBody");
-//   if (!tbody) return;
+async function fetchAndDisplayUsers() {
+  const tbody = document.getElementById("usersTableBody");
+  if (!tbody) return;
 
-//   tbody.innerHTML = "<tr><td colspan='5' class='py-4 text-center'>Loading...</td></tr>";
-//   try {
-//     const res = await fetch("http://localhost:5000/registrations");
-//     const users = await res.json();
+  tbody.innerHTML = "<tr><td colspan='5' class='py-4 text-center'>Loading...</td></tr>";
+  try {
+    const res = await fetch("http://localhost:5000/registrations");
+    const users = await res.json();
 
-//     if (!Array.isArray(users) || users.length === 0) {
-//       tbody.innerHTML = "<tr><td colspan='5' class='text-center text-gray-500 py-4'>No users yet.</td></tr>";
-//       return;
-//     }
+    if (!Array.isArray(users) || users.length === 0) {
+      tbody.innerHTML = "<tr><td colspan='5' class='text-center text-gray-500 py-4'>No users yet.</td></tr>";
+      return;
+    }
 
-//     tbody.innerHTML = users.map(user => `
-//       <tr>
-//         <td class="p-2">${user.name}</td>
-//         <td class="p-2">${user.idNumber}</td>
-//         <td class="p-2">${user.country}</td>
-//         <td class="p-2">${user.role}</td>
-//         <td class="p-2">${user.timestamp}</td>
-//       </tr>`).join("");
-//   } catch (err) {
-//     tbody.innerHTML = "<tr><td colspan='5' class='text-center text-red-600 py-4'>Failed to load users.</td></tr>";
-//     console.error(err);
-//   }
-// }
+    tbody.innerHTML = users.map(user => `
+      <tr>
+        <td class="p-2">${user.name}</td>
+        <td class="p-2">${user.idNumber}</td>
+        <td class="p-2">${user.country}</td>
+        <td class="p-2">${user.role}</td>
+        <td class="p-2">${user.timestamp}</td>
+      </tr>`).join("");
+  } catch (err) {
+    tbody.innerHTML = "<tr><td colspan='5' class='text-center text-red-600 py-4'>Failed to load users.</td></tr>";
+    console.error(err);
+  }
+}
 // for home 
 function initSlideshow() {
   const images = [
