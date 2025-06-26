@@ -1,36 +1,36 @@
-// {
-//   "registrations": [
-//     {
-//       "id": 1,
-//       "name": "Jane Doe",
-//       "idNumber": "12345678",
-//       "country": "KE",
-//       "role": "Nanny",
-//       "timestamp": "2025-06-26 10:30:00"
-//     },
-//     {
-//       "id": "7277",
-//       "name": "Samuel Abere",
-//       "idNumber": "229544576",
-//       "country": "KE",
-//       "role": "Nanny",
-//       "timestamp": "6/26/2025, 11:14:41 PM"
-//     }
-//   ],
-//   "bookings": [
-//     {
-//       "id": 1,
-//       "parentName": "John Smith",
-//       "nannyName": "Jane Doe",
-//       "appointment": "2025-06-30T14:00",
-//       "email": "john@example.com"
-//     },
-//     {
-//       "id": "b42f",
-//       "parentName": "Samuel Abere",
-//       "nannyName": "Ann Maina",
-//       "appointment": "2025-06-26T01:18",
-//       "email": "abere.maina@gmail.com"
-//     }
-//   ]
-// }
+{
+  "registrations": [
+    {
+      "id": 1,
+      "name": "Jane Doe",
+      "idNumber": "12345678",
+      "country": "KE",
+      "role": "Nanny",
+      "timestamp": "2025-06-26 10:30:00"
+    },
+    {
+      "id": "7277",
+      "name": "Samuel Abere",
+      "idNumber": "229544576",
+      "country": "KE",
+      "role": "Nanny",
+      "timestamp": "6/26/2025, 11:14:41 PM"
+    }
+  ],
+  "bookings": [
+    {
+      "id": 1,
+      "parentName": "John Smith",
+      "nannyName": "Jane Doe",
+      "appointment": "2025-06-30T14:00",
+      "email": "john@example.com"
+    },
+    {
+      "id": "b42f",
+      "parentName": "Samuel Abere",
+      "nannyName": "Ann Maina",
+      "appointment": "2025-06-26T01:18",
+      "email": "abere.maina@gmail.com"
+    }
+  ]
+}
