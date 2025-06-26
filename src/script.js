@@ -131,43 +131,43 @@ function initSlideshow() {
   }, 5000);
 }
 
-// function initBookingForm() {
-//   const bookingForm = document.getElementById("bookingForm");
-//   const bookingStatus = document.getElementById("bookingStatus");
+function initBookingForm() {
+  const bookingForm = document.getElementById("bookingForm");
+  const bookingStatus = document.getElementById("bookingStatus");
 
-//   if (!bookingForm) return;
+  if (!bookingForm) return;
 
-//   bookingForm.addEventListener("submit", async (e) => {
-//     e.preventDefault();
+  bookingForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-//     const parentName = bookingForm.parentName.value.trim();
-//     const nannyName = bookingForm.nannyName.value.trim();
-//     const appointment = bookingForm.appointment.value;
-//     const email = bookingForm.email.value.trim();
+    const parentName = bookingForm.parentName.value.trim();
+    const nannyName = bookingForm.nannyName.value.trim();
+    const appointment = bookingForm.appointment.value;
+    const email = bookingForm.email.value.trim();
 
-//     if (!parentName || !nannyName || !appointment || !email) {
-//       alert("Please fill all fields.");
-//       return;
-//     }
+    if (!parentName || !nannyName || !appointment || !email) {
+      alert("Please fill all fields.");
+      return;
+    }
 
-//     const bookingPayload = { parentName, nannyName, appointment, email };
+    const bookingPayload = { parentName, nannyName, appointment, email };
 
-//     try {
-//       const res = await fetch("http://localhost:5000/bookings", {
-//         method: "POST",
-//         headers: { "Content-Type": "application/json" },
-//         body: JSON.stringify(bookingPayload)
-//       });
+    try {
+      const res = await fetch("http://localhost:5000/bookings", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(bookingPayload)
+      });
 
-//       if (res.ok) {
-//         bookingForm.reset();
-//         bookingStatus.textContent = "✅ Booking confirmed! Check your email.";
-//       } else {
-//         bookingStatus.textContent = "❌ Booking failed.";
-//       }
-//     } catch (err) {
-//       bookingStatus.textContent = "❌ Network error. Please try again later.";
-//       console.error(err);
-//     }
-//   });
-// }
+      if (res.ok) {
+        bookingForm.reset();
+        bookingStatus.textContent = "✅ Booking confirmed! Check your email.";
+      } else {
+        bookingStatus.textContent = "❌ Booking failed.";
+      }
+    } catch (err) {
+      bookingStatus.textContent = "❌ Network error. Please try again later.";
+      console.error(err);
+    }
+  });
+}
