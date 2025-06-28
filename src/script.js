@@ -27,19 +27,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // Registration Form Submission
-  // if (form) {
-  //   form.addEventListener("submit", async (e) => {
-  //     e.preventDefault();
-  //     const name = form.name.value.trim();
-  //     const idNumber = form.idNumber.value.trim();
-  //     const country = form.country.value;
-  //     const role = form.role.value;
-  //     const timestamp = new Date().toLocaleString();
+  if (form) {
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const name = form.name.value.trim();
+      const idNumber = form.idNumber.value.trim();
+      const country = form.country.value;
+      const role = form.role.value;
+      const timestamp = new Date().toLocaleString();
 
-  //     if (!name || !idNumber || !country || !role) {
-  //       alert("Please fill in all required fields.");
-  //       return;
-  //     }
+      if (!name || !idNumber || !country || !role) {
+        alert("Please fill in all required fields.");
+        return;
+      }
 
       const payload = { name, idNumber, country, role, timestamp };
 
