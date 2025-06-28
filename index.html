@@ -6,64 +6,72 @@
   <title>MyNanny - Trusted Nanny Services</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  crossorigin="anonymous"
-  referrerpolicy="no-referrer" />
-
 </head>
 <body class="bg-gray-100 text-gray-800">
   <!-- NAVIGATION -->
   <header class="bg-white shadow-md">
     <nav class="container mx-auto flex justify-between items-center px-6 py-4">
       <h1 class="text-xl font-bold text-indigo-700">MyNanny</h1>
-      <ul class="flex space-x-6 text-sm font-medium">
+      <div class="md:hidden">
+        <button id="mobileMenuBtn" class="text-indigo-700 text-2xl focus:outline-none">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+      <ul id="navMenu" class="hidden md:flex space-x-6 text-sm font-medium">
         <li><a href="#home" class="hover:text-indigo-600">Home</a></li>
         <li><a href="#about" class="hover:text-indigo-600">About</a></li>
         <li><a href="#register" class="hover:text-indigo-600">Register</a></li>
         <li><a href="#booking" class="hover:text-indigo-600">Booking</a></li>
       </ul>
     </nav>
+    <div id="mobileMenu" class="md:hidden hidden px-6 pb-4">
+      <ul class="space-y-2 text-sm font-medium">
+        <li><a href="#home" class="block text-indigo-700">Home</a></li>
+        <li><a href="#about" class="block text-indigo-700">About</a></li>
+        <li><a href="#register" class="block text-indigo-700">Register</a></li>
+        <li><a href="#booking" class="block text-indigo-700">Booking</a></li>
+      </ul>
+    </div>
   </header>
 
    <!-- HOME  -->
-  <section id="home" class="relative bg-white min-h-screen px-6 py-20 text-center">
-    <h1 class="text-4xl md:text-5xl font-bold text-indigo-800">Find Trusted Nannies Near You</h1>
-    <p class="text-lg mt-4 max-w-xl mx-auto">Connecting families with experienced, background-checked nannies across Kenya and beyond.</p>
-<div class="relative mt-10 w-full max-w-7xl h-[4oopx] mx-auto overflow-hidden rounded-2xl shadow-2xl">
-  <!-- Slideshow Image -->
-  <img id="slideshowImage"
-     src="https://images.pexels.com/photos/9705777/pexels-photo-9705777.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-     alt="Slideshow"
-     class="w-full h-full object-cover transition-opacity duration-1000 opacity-100 z-0" />
+<section id="home" class="bg-white px-4 py-16 sm:py-20">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-8">
+    
+    <!-- Book Service Button on the Left -->
+    <div class="md:w-1/4 w-full text-center md:text-left">
+      <h2 class="text-2xl font-bold text-indigo-700 mb-4">Hire Qualified Nanny</h2>
+      <a href="#register"
+        class="inline-block bg-blue-600 hover:bg-gray-400 text-white px-6 py-3 rounded transition font-medium">
+        Book Service
+      </a>
+    </div>
 
-  <!-- Overlay -->
-  <div class="absolute inset-0 bg-black bg-opacity-40 z-10"></div>
+    <!-- Slideshow Image -->
+    <div class="relative w-full md:w-3/4 rounded-2xl overflow-hidden shadow-2xl">
+      <img id="slideshowImage"
+        src="https://images.pexels.com/photos/9705777/pexels-photo-9705777.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        alt="Slideshow"
+        class="w-full h-[600px] object-cover transition-opacity duration-1000 opacity-100 z-0" />
+      
+      <!-- Overlay -->
+      <div class="absolute inset-0 bg-black bg-opacity-40 z-10"></div>
 
-  <!-- Content Over Image -->
-  <div class="absolute z-20 inset-0 flex flex-col items-center justify-center text-white px-6 text-center">
-    <h2 class="text-3xl md:text-4xl font-bold mb-4">Find Trusted Nannies Fast</h2>
-    <p class="text-lg md:text-xl mb-6 max-w-2xl">
-      Reliable, background-checked professionals to care for your family — at your convenience.
-    </p>
-    <a href="#register"
-       class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition duration-300">
-      Get Started Now
-    </a>
-  </div>
-</div>
-
-
-
-      <div class="absolute top-1/2 left-6 transform -translate-y-1/2 text-white z-10">
-        <p class="text-2xl font-semibold">Hire Qualified Nanny</p>
-      <a href="#register" class="inline-block mt-4 bg-blue-600 text-white px-6 py-3 rounded hover:bg-gray-400 hover:text-white transition">
-  Book Service
-</a>
-
+      <!-- Text Content Over Image -->
+      <div class="absolute inset-0 z-20 flex flex-col items-center justify-center text-white px-4 text-center">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-3">Find Trusted Nannies Fast</h2>
+        <p class="text-base sm:text-lg md:text-xl mb-6 max-w-xl">
+          Reliable, background-checked professionals to care for your family — at your convenience.
+        </p>
+        <a href="#register"
+          class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded shadow-md transition">
+          Get Started Now
+        </a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- ABOUT -->
  <section id="about" class="py-20 bg-gray-50">
@@ -89,7 +97,7 @@
         <div class="mt-12 text-center">
           <h3 class="text-xl font-semibold text-green-700 mb-2">What We Offer</h3>
           <p class="text-sm text-gray-600 mb-4">We connect you to verified, background-checked nannies, caregivers, and domestic support staff — with easy registration and transparent profiles.</p>
-          <p class="text-xs italic text-gray-500">“It’s like Uber for nannies! So easy to book and track.” — <strong>Brian, Kisumu</strong></p>
+          <p class="text-xs italic text-gray-500">“It's like Uber for nannies! So easy to book and track.” — <strong>Brian, Kisumu</strong></p>
         </div>
       </div>
 
