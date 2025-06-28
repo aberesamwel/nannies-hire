@@ -15,13 +15,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const timeDisplay = document.getElementById("timeDisplay");
 
   // Populate country dropdown
-  if (countrySelect) {
-    countries.forEach(c => {
-      const opt = document.createElement("option");
-      opt.value = c.code;
-      opt.textContent = c.name;
-      countrySelect.appendChild(opt);
-    });
+  // if (countrySelect) {
+  //   countries.forEach(c => {
+  //     const opt = document.createElement("option");
+  //     opt.value = c.code;
+  //     opt.textContent = c.name;
+  //     countrySelect.appendChild(opt);
+  //   });
   }
   console.log("countrySelect:", countrySelect); // should NOT be null
 
