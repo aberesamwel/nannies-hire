@@ -110,8 +110,9 @@ async function fetchAndDisplayUsers() {
 // for home 
 function initSlideshow() {
   const images = [
-    "https://images.pexels.com/photos/6182087/pexels-photo-6182087.jpeg",
+    // "https://images.pexels.com/photos/6182087/pexels-photo-6182087.jpeg",
     "https://images.pexels.com/photos/11369238/pexels-photo-11369238.jpeg",
+    "https://images.pexels.com/photos/6414654/pexels-photo-6414654.jpeg",
   ];
 
   let index = 0;
