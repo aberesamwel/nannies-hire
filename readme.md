@@ -6,7 +6,7 @@ A modern, responsive web application that connects families with trusted, backgr
 
 ## 🌐 Live Preview
 
-<!-- > *(https://github.com/aberesamwel/nannies-hire)* -->
+> *(https://github.com/aberesamwel/nannies-hire)*
 
 ---
 

@@ -9,10 +9,10 @@ const countries = [
   { name: "South Africa", code: "ZA" }
 ];
 
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("registrationForm");
-  const countrySelect = document.getElementById("country");
-  const timeDisplay = document.getElementById("timeDisplay");
+// document.addEventListener("DOMContentLoaded", () => {
+//   const form = document.getElementById("registrationForm");
+//   const countrySelect = document.getElementById("country");
+//   const timeDisplay = document.getElementById("timeDisplay");
 
   // Populate country dropdown
   if (countrySelect) {
